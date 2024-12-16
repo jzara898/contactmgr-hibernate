@@ -8,8 +8,8 @@
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.H2Dialect</property>
 
-        <!-- Create the database schema on startup -->
-        <property name="hbm2ddl.auto">create</property>
+        <!-- Create the database schema on startup; wipes out previous data each time application run
+        <property name="hbm2ddl.auto">create</property>  -->
 
         <!-- Update the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>

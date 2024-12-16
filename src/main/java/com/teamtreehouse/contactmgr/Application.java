@@ -8,7 +8,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
-
 import java.util.List;
 
 public class Application {
@@ -27,7 +26,6 @@ public class Application {
                 .withPhone(7735556666L)
                 .build();
         int id = save(contact);
-
 
         // Display a list of contacts before the update
         System.out.printf("%n%nBefore update%n%n");
@@ -64,7 +62,7 @@ public class Application {
         Session session = sessionFactory.openSession();
 
         // Retrieve the persistent object (or null if not found)
-        Contact contact = session.get(Contact.class,id);
+        Contact contact = session.get(Contact.class, id);
 
         // Close the session
         session.close();
@@ -80,7 +78,7 @@ public class Application {
         // Begin a transaction
         session.beginTransaction();
 
-        // Use the session to update the contact
+        // Use the session to delete the contact
         session.delete(contact);
 
         // Commit the transaction
@@ -107,7 +105,7 @@ public class Application {
         session.close();
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({"unchecked", "deprecation"})
     private static List<Contact> fetchAllContacts() {
         // Open a session
         Session session = sessionFactory.openSession();
@@ -132,7 +130,7 @@ public class Application {
         session.beginTransaction();
 
         // Use the session to save the contact
-        int id = (int)session.save(contact);
+        int id = (int)session.merge(contact);
 
         // Commit the transaction
         session.getTransaction().commit();
