@@ -98,10 +98,13 @@ public class Contact {
         }
 
         public ContactBuilder withPhone(Long phone) {
+            //like a setter we set the field
             this.phone = phone;
             return this;
         }
 
+
+//creates the end contact object
         public Contact build() {
             return new Contact(this);
         }

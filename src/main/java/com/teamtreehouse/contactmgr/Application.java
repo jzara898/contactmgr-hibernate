@@ -28,6 +28,7 @@ public class Application {
                 .build();
         int id = save(contact);
 
+
         // Display a list of contacts before the update
         System.out.printf("%n%nBefore update%n%n");
         fetchAllContacts().stream().forEach(System.out::println);
