@@ -1,4 +1,5 @@
 <hibernate-configuration>
+    <!-- how to add the Hibernate dependency to your Gradle build file and include a Hibernate configuration file in XML format -->
     <session-factory>
         <!-- Database connection setting -->
         <property name="connection.driver_class">org.h2.Driver</property>
